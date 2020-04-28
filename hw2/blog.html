@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="blog.css" />
+	
+	<script>
+		//creating empty image when image load error occur.
+		function emptyImage(ele){
+			var c = document.createElement("CANVAS");
+			c.width=150;
+			c.height=150;
+			c.border=10;
+			var ctx = c.getContext("2d");
+			ctx.beginPath();
+			ctx.lineWidth = 5;
+			ctx.strokeRect(2.5,2.5, 145, 145);
+			ctx.moveTo(0,0);
+			ctx.lineTo(147.5, 147.5);
+			ctx.moveTo(0, 150);
+			ctx.lineTo(147.5, 2.5);
+			ctx.stroke();
+			var image = new Image();
+			image.src = c.toDataURL("image/png");
+			document.getElementById(ele.id).src=image.src;
+		}
+	</script>
+	<title>A Web Page</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+		<ul>
+			<li><a href="#">Home</a></li><li class="navBorder">|</li>
+			<li><a href="#">About Me</a></li><li class="navBorder">|</li>
+			<li><a href="#">Contact Me</a></li>
+			<li class="rightLi"><a href="#">Login</a></li>
+		</ul>
+			</nav>
+	</header>
+	
+	<article class="mainColumn">
+		<h1>This is my blog</h1>
+		<section class="postSection" id="post#1">
+			<p class="postContent">
+				<p class="postTitle">Blog post #1</p>
+				<img src="#" id="postImage#1" class="postImage" onerror="emptyImage(this)" />
+				<p class="postPreview">My <b>first blog post</b> is all about my <font color="red"> blog post</font> and how to write a new post in my blog, you can find it <a href="#">here</a>.</p>
+			</p>
+			<p class="postFooter">Published 1 days ago by Israel</p>
+		</section>
+		<section class="postSection" id="post#2">
+			<p class="postContent">
+				<p class="postTitle">Blog post #2</p>
+				<img src="#" id="postImage#2" class="postImage" onerror="emptyImage(this)" />
+				<p class="postPreview">My <b>second blog post</b> is all about my blog post. <br>
+				text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text .</p>
+			</p>
+			<p class="postFooter">Published 2 days ago by Joe</p>
+		</section>
+		<section class="postSection" id="post#3">
+			<p class="postContent">
+				<p class="postTitle">Blog post #3</p>
+				<img src="#" id="postImage#3" class="postImage" onerror="emptyImage(this)" />
+				<p class="postPreview">My <b>third blog post</b> is all about my blog post. <br>
+				text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text .</p>
+			</p>
+			<p class="postFooter">Published 3 days ago by Israel</p>
+		</section>
+		
+	</article>
+	 <aside class="sideColumn">
+		 <div>
+			 <h1>Latest</h1>
+			 <p>Blog post #1 <a href="#">go to page</a></p>
+			 <p>Blog post #2 <a href="#">go to page</a></p>
+			 <p>Blog post #3 <a href="#">go to page</a></p>
+		 </div>
+		 <hr class="divider">
+		 <div>
+			 <h1>Popular</h1>
+			 <p>Blog post #3 <a href="#">go to page</a></p>
+			 <p>Blog post #1 <a href="#">go to page</a></p>
+			 <p>Blog post #2 <a href="#">go to page</a></p>
+		 </div>
+		 
+	</aside>
+
+	<footer>
+		Lidor Cohen
+	</footer>
+</body>
+</html>
